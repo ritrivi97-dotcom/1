@@ -29,8 +29,11 @@
 
     /* Header */
     header {background: url("metal-bg.jpg") center/cover no-repeat, #333; color: var(--white-text); text-align: center; padding: 3rem 2rem;}
+    /* REGOLA LOGO STANDARD: MAX 420px (per desktop) */
     header img { max-width: 420px; height: auto; display: block; margin: 0 auto 1rem; filter: drop-shadow(2px 2px 6px rgba(0,0,0,.6));}
     header p {
+        /* CAMBIO COLORE DEL TESTO DELL'HEADER DA BIANCO A ROSSO/BORDEAUX */
+        color: var(--primary-color); 
         font-family: 'Rajdhani', sans-serif;
         font-weight: 600;
         font-size: 1.5rem;
@@ -176,6 +179,12 @@
 
     /* Media Query per Responsiveness */
     @media (max-width: 768px) {
+        /* FIX DEFINITIVO LOGO MOBILE: Sovrascrive max-width: 420px */
+        header img {
+            max-width: 80% !important; /* Forza il logo ad adattarsi, mantenendo un piccolo margine */
+            margin: 0 auto 0.5rem !important; /* Riduce il margine superiore e inferiore */
+        }
+
         nav .nav-links {
             display: flex;
             flex-direction: column;
@@ -263,8 +272,15 @@ header{
   background: url("metal-bg.jpg") center/cover no-repeat, #2c2c2c;
   padding: 3rem 1rem;
 }
+/* Questa regola è ora sovrascritta dalla media query per il max-width su mobile */
 header img{ max-width: 420px; height: auto; display:block; margin: 0 auto 0.6rem; filter: drop-shadow(2px 2px 6px rgba(0,0,0,.6));}
 
+
+img {
+    max-width: 100%; /* Assicura che anche le altre immagini siano responsive */
+    height: auto;
+    display: block;
+}
 
 
 :root { --site-bg-image: url("foto/sfondo-sito.jpg"); }
@@ -566,7 +582,7 @@ footer p{color:#000 !important;}
 </section>
 </main>
 <footer>
-<p>© 2025 Meccanica di Precisione Ritrivi | P.IVA 01234567890</p>
+<p>© 2025 Meccanica di Precisione Ritrivi | P.IVA 02678720695</p>
 <div style="margin-top:20px; display:flex; gap:20px; justify-content:center;">
 <a href="https://www.facebook.com/profile.php?id=61582127255920&rdid=tdZxsq3ZRyr9Mlv9&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19pZ9VbDGu%2F#" target="_blank">
 <img alt="Facebook" height="32" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" width="32"/>
@@ -574,7 +590,7 @@ footer p{color:#000 !important;}
 <a href="https://www.instagram.com/mpr.srl/?utm_source=qr&igsh=MXBseG94ajNha2NoZg%3D%3D#" target="_blank">
 <img alt="Instagram" height="32" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" width="32"/>
 </a>
-<a href="https://www.linkedin.com/in/matteo-ritrivi-869522162/" target="_blank">
+<a href="https://www.linkedin.com/company/mprsrl/" target="_blank">
 <img alt="LinkedIn" height="32" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" width="32"/>
 </a>
 </div>
